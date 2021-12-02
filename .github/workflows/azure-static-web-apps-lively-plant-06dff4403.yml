@@ -17,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          package-manager: npm
           submodules: true
       - name: Build And Deploy
         id: builddeploy
