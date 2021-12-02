@@ -1,0 +1,29 @@
+// Font import
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap');
+// other import
+@import "assets/styles/variables";
+@import "assets/styles/customStyles";
+// Components import
+@import "components/App/app";
+@import "components/Header/header";
+@import "components/Home/home";
+@import "components/Charts/charts";
+@import "components/Kvev/kvev";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-family: inherit;
+  color: $color-black;
+}
+

@@ -1,0 +1,94 @@
+.button {
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  background-color: $dark-blue;
+  border: 1px solid $dark-blue;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  max-width: 150px;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 10px;
+  &:hover {
+    color: $dark-blue;
+    background-color: $color-white;
+  }
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+  @media (max-width: 770px) {
+    max-width: none;
+  }
+}
+
+.webflow-style-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  border-radius: 2px;
+  background: $input-background;
+  &.upload {
+    background: none;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6) 0% 0%;
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+  }
+  @media (max-width: 770px) {
+    margin: 0 auto;
+  }
+}
+
+.webflow-style-input input {
+  flex-grow: 1;
+  color: black;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  font-size: 20px;
+  padding-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+  &::-webkit-input-placeholder {
+    color: $input-text-inactive;
+  }
+
+}
+
+.webflow-style-input button {
+  color: $input-text-inactive;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  transition: color 0.25s;
+  &:hover {
+    color: $input-text-active;
+  }
+}
+
+// gradient animation
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+

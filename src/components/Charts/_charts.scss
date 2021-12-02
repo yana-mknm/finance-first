@@ -1,0 +1,101 @@
+.charts {
+  &-container {
+    width: 100%;
+    padding: 0 50px;
+    margin-top: -50px;
+    @media (max-width: 770px) {
+      margin-top: 0;
+      padding: 0 20px;
+    }
+    &__header {
+      max-width: 500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      @media (max-width: 770px) {
+        flex-direction: column;
+      }
+
+    }
+  }
+  &-header__text {
+    font-size: 36px;
+    margin-right: 20px;
+    @media (max-width: 770px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  &-items {
+    &__container {
+      display: flex;
+      align-items: center;
+      canvas {
+        background: darken(#fff, 10%);
+        margin-right: 20px;
+        @media (max-width: 770px) {
+          margin-right: 0;
+        }
+      }
+      @media (max-width: 770px) {
+        flex-direction: column;
+      }
+    }
+    &__item {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      height: 500px;
+      margin: auto auto 20px;
+      min-width: 0;
+    }
+  }
+  &-button {
+    &__container {
+      height: 40px;
+      position: relative;
+      &:before {
+        content: 'Завантажити';
+        font-family: 'Montserrat', sans-serif;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background: $dark-blue;
+        color: $color-white;
+        font-size: 18px;
+        max-width: 150px;
+        height: 40px;
+        width: 100%;
+        padding: 0 15px;
+        border: 1px solid $dark-blue;
+        font-weight: 500;
+        line-height: 50px;
+        text-transform: uppercase;
+        pointer-events: none;
+        border-radius: 10px;
+        transition: all .3s;
+      }
+      &:hover {
+        &:before {
+          color: $dark-blue;
+          background-color: $color-white;
+        }
+      }
+      input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+  }
+}
