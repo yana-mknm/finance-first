@@ -1,11 +1,11 @@
 import React, { useState, useEffect} from 'react';
-
 import { Link } from "react-router-dom";
-
 import logo from '../../assets/images/logo.png'
 import NavBar from "./NavBar";
+import useGaTracker from '../useGaTracker'
 
 const Header = () => {
+	useGaTracker();
     const [screenWidth, setScreenWidth] = useState(null);
 
     useEffect(() => {

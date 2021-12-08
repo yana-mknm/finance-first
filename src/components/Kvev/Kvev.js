@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
 import kvevImage from '../../assets/images/geom-test-image.png'
+import useGaTracker from '../useGaTracker'
 
 const Kvev = () => {
+  useGaTracker();
   const [VEV, setVEV] = useState(null);
   const [EBITDA, setEBITDA] = useState(null);
   const [result, setResult] = useState(null);

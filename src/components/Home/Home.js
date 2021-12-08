@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
 import homePageImage from '../../assets/images/geom-test-image.png'
+import useGaTracker from '../useGaTracker'
 
 const Home = () => {
+	useGaTracker();
     return (
         <div className="home-container">
             <div className="home-container__left">
