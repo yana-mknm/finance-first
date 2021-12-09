@@ -8,7 +8,7 @@ const useGaTracker = () => {
 
     useEffect(() => {
         if (!window.location.href.includes("localhost")) {
-        ReactGA.initialize("G-19RJ7PX9CX");
+        ReactGA.initialize("UA-214284890-1");
 		setInitialized(true);
         }
     }, []);
