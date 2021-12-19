@@ -9,10 +9,10 @@ const Home = () => {
         <div className="home-container">
             <div className="home-container__left">
                 <h1 className="home-header">
-                    Lorem ipsum dolor sit amet.
+                    Венчурне фінансування
                 </h1>
                 <h2 className="home-subtitle">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad aliquid aspernatur, distinctio dolor dolore fuga modi obcaecati quas quia reiciendis saepe totam veritatis vitae!
+                    Довгострокові високоризикові інвестиції (зазвичай тривалістю в 5-7 років) приватного капіталу в акціонерний капітал новостворюваних малих високотехнологічних перспективних компаній з метою отримання доходу від приросту вартості вкладених коштів.
                 </h2>
                 <Link
                     className="button button-blue"
@@ -24,7 +24,7 @@ const Home = () => {
                     className="button button-blue"
                     to="/kvev"
                 >
-                    Коефіцієнт
+                    NPV
                 </Link>
             </div>
             <div className="home-container__right">
