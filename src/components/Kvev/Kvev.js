@@ -6,11 +6,16 @@ const Kvev = () => {
   useGaTracker();
   const [VEV, setVEV] = useState(null);
   const [EBITDA, setEBITDA] = useState(null);
+  const [FIRSTYEAR, setFIRSTYEAR] = useState(null);
+  const [SECONDYEAR, setSECONDYEAR] = useState(null);
+  const [THIRD, setTHIRD] = useState(null);
+  const [FOUR, setFOUR] = useState(null);
+  const [FIVE, setFIVE] = useState(null);
   const [result, setResult] = useState(null);
 
   const calculate = () => {
-    console.log(VEV / (12 * EBITDA));
-    let kvev = (VEV / (12 * EBITDA)).toFixed(2);
+    console.log((FIRSTYEAR / Math.pow((1+0.2),1)) + (SECONDYEAR / Math.pow((1.2),2)) + (THIRD / Math.pow((1.2),3)) + (FOUR / Math.pow((1.2),4)) + (FIVE / Math.pow((1.2),5)) - VEV);
+    let kvev = ((FIRSTYEAR / Math.pow((1+0.2),1)) + (SECONDYEAR / Math.pow((1.2),2)) + (THIRD / Math.pow((1.2),3)) + (FOUR / Math.pow((1.2),4)) + (FIVE / Math.pow((1.2),5)) - VEV).toFixed(2);
     setResult(kvev);
   };
 
@@ -18,12 +23,12 @@ const Kvev = () => {
     <div className="kvev-container">
         <div className="kvev-container__left">
             <h1 className="kvev-header">
-                Коефіцієнт мультиплікатор вартості для порівнювального підприємства
+                Інвестиційний калькулятор <br/> для оцінки NPV
             </h1>
             <div  className="kvev-form__container">
                 <div className="kvev-form__input-container">
                     <label className="kvev-form__input-label">
-                        Ринкова вартість порівнювального підприємства, грн:
+                        Початкова інверстиція, грн:
                     </label>
                     <div className="webflow-style-input">
                         <input
@@ -34,8 +39,42 @@ const Kvev = () => {
                 </div>
                 <div className="kvev-form__input-container">
                     <label className="kvev-form__input-label">
-                        Фінансовий показник, який відображає дохід підприємства до виплати
-                        відсотків, податків і амортизаційних відрахувань за місяць, грн:
+                        Очікуваний дохід за 5 років, грн:
+                    </label>
+                    <div className="webflow-style-input">
+                        <input
+                            type="number"
+                            onChange={(el) => setFIRSTYEAR(el.target.value)}
+                        />
+                    </div>
+                    <div className="webflow-style-input">
+                        <input
+                            type="number"
+                            onChange={(el) => setSECONDYEAR(el.target.value)}
+                        />
+                    </div>
+                    <div className="webflow-style-input">
+                        <input
+                            type="number"
+                            onChange={(el) => setTHIRD(el.target.value)}
+                        />
+                    </div>
+                    <div className="webflow-style-input">
+                        <input
+                            type="number"
+                            onChange={(el) => setFOUR(el.target.value)}
+                        />
+                    </div>
+                    <div className="webflow-style-input">
+                        <input
+                            type="number"
+                            onChange={(el) => setFIVE(el.target.value)}
+                        />
+                    </div>
+                </div>
+                <div className="kvev-form__input-container">
+                    <label className="kvev-form__input-label">
+                        Коефіцієнт дисконтування
                     </label>
                     <div className="webflow-style-input">
                         <input
@@ -48,7 +87,7 @@ const Kvev = () => {
                     className="button button-blue"
                     onClick={calculate}
                 >
-                    Calculate
+                    Обчислити
                 </button>
             </div>
             <div className="kvev-result__container">
